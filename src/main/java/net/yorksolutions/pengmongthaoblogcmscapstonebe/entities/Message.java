@@ -14,4 +14,54 @@ public class Message {
     private String body;
     private String dateCreated;
     private int chatOrder;
+
+    public Message() {
+    }
+
+    public Message(String creator, String body, String dateCreated, int chatOrder) {
+        this.creator = creator;
+        this.body = body;
+        this.dateCreated = dateCreated;
+        this.chatOrder = chatOrder;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public String getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(String dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public int getChatOrder() {
+        return chatOrder;
+    }
+
+    public void setChatOrder(int chatOrder) {
+        this.chatOrder = chatOrder;
+    }
 }
