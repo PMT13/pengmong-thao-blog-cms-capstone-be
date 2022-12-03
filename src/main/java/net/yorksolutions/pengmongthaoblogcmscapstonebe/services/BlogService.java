@@ -27,7 +27,11 @@ public class BlogService {
     }
 
     public Blog updateBlog(Blog request) {
-        this.repo.save(request);
-        return request;
+        return this.repo.save(request);
+    }
+
+    public void deleteBlogById(Long id) {
+        Blog blogToDelete = this.repo.findById(id).orElseThrow();
+        this.repo.delete(blogToDelete);
     }
 }
