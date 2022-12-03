@@ -16,7 +16,7 @@ public class Blog {
     private String dateCreated;
     private String dateUpdated;
     private String body;
-
+    private Long creatorId;
     @ElementCollection
     private Set<String> views;
 
@@ -26,11 +26,12 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(String title, String dateCreated, String body) {
+    public Blog(String title, String dateCreated, String body, Long creatorId) {
         this.title = title;
         this.dateCreated = dateCreated;
         this.dateUpdated = "";
         this.body = body;
+        this.creatorId = creatorId;
         this.views = new HashSet<>();
         this.comments = new HashSet<>();
     }
@@ -89,5 +90,13 @@ public class Blog {
 
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
+    }
+
+    public Long getCreatorId() {
+        return creatorId;
+    }
+
+    public void setCreatorId(Long creatorId) {
+        this.creatorId = creatorId;
     }
 }
