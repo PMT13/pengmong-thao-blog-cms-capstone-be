@@ -28,7 +28,6 @@ public class AccountService {
     }
 
     public Account updateAccount(Account request) {
-        this.repo.save(request);
-        return request;
+        return this.repo.save(request);
     }
 }
