@@ -15,10 +15,10 @@ public class CommentController {
         this.service = service;
     }
 
-    @PostMapping
-    public Comment addComment(@RequestBody Comment request){
-        return this.service.addComment(request);
-    }
+//    @PostMapping
+//    public Comment addComment(@RequestBody Comment request){
+//        return this.service.addComment(request);
+//    }
 
     @PutMapping
     public Comment updateComment(@RequestBody Comment request){
