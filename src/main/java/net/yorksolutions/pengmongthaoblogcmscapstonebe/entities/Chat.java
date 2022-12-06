@@ -14,17 +14,19 @@ public class Chat {
 
     private String person1;
     private String person2;
-    private String lastVisited;
+    private String lastVisitedPerson1;
+    private String lastVisitedPerson2;
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
     private Set<Message> messages;
 
     public Chat() {
     }
 
-    public Chat(String person1, String person2, String lastVisited) {
+    public Chat(String person1, String person2, String lastVisitedPerson1, String lastVisitedPerson2) {
         this.person1 = person1;
         this.person2 = person2;
-        this.lastVisited = lastVisited;
+        this.lastVisitedPerson1 = lastVisitedPerson1;
+        this.lastVisitedPerson2 = lastVisitedPerson2;
         this.messages = new HashSet<>();
     }
 
@@ -60,11 +62,19 @@ public class Chat {
         this.messages = messages;
     }
 
-    public String getLastVisited() {
-        return lastVisited;
+    public String getLastVisitedPerson1() {
+        return lastVisitedPerson1;
     }
 
-    public void setLastVisited(String lastVisited) {
-        this.lastVisited = lastVisited;
+    public void setLastVisitedPerson1(String lastVisitedPerson1) {
+        this.lastVisitedPerson1 = lastVisitedPerson1;
+    }
+
+    public String getLastVisitedPerson2() {
+        return lastVisitedPerson2;
+    }
+
+    public void setLastVisitedPerson2(String lastVisitedPerson2) {
+        this.lastVisitedPerson2 = lastVisitedPerson2;
     }
 }

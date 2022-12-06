@@ -26,7 +26,7 @@ public class ChatController {
     }
 
     @PutMapping
-    public Chat updateChat(@RequestBody Chat request){
+    public Iterable<Chat> updateChat(@RequestBody Chat request){
         return this.service.updateChat(request);
     }
 

@@ -13,8 +13,6 @@ public class Message {
     private String creator;
     private String body;
     private String dateCreated;
-    private int chatOrder;
-
     public Message() {
     }
 
@@ -22,7 +20,6 @@ public class Message {
         this.creator = creator;
         this.body = body;
         this.dateCreated = dateCreated;
-        this.chatOrder = chatOrder;
     }
 
     public Long getId() {
@@ -55,13 +52,5 @@ public class Message {
 
     public void setDateCreated(String dateCreated) {
         this.dateCreated = dateCreated;
-    }
-
-    public int getChatOrder() {
-        return chatOrder;
-    }
-
-    public void setChatOrder(int chatOrder) {
-        this.chatOrder = chatOrder;
     }
 }

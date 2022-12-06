@@ -20,8 +20,9 @@ public class ChatService {
         return this.repo.save(request);
     }
 
-    public Chat updateChat(Chat request) {
-        return this.repo.save(request);
+    public Iterable<Chat> updateChat(Chat request) {
+        this.repo.save(request);
+        return this.repo.findAll();
     }
 
     public void deleteChatById(Long id) {
