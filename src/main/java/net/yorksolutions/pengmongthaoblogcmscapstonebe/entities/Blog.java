@@ -20,7 +20,7 @@ public class Blog {
     @ElementCollection
     private Set<String> views;
 
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Comment> comments;
 
     public Blog() {

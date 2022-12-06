@@ -4,6 +4,8 @@ import net.yorksolutions.pengmongthaoblogcmscapstonebe.entities.Account;
 import net.yorksolutions.pengmongthaoblogcmscapstonebe.repositories.AccountRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class AccountService {
@@ -29,5 +31,13 @@ public class AccountService {
 
     public Account updateAccount(Account request) {
         return this.repo.save(request);
+    }
+
+    public Account getAccountByUsername(String username) {
+        Account accountFound = this.repo.findAccountByUsername(username);
+        if(accountFound != null){
+            return this.repo.findAccountByUsername(username);
+        }
+        return null;
     }
 }

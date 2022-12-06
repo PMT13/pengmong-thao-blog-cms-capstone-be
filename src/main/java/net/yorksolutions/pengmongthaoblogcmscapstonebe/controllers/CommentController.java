@@ -1,5 +1,6 @@
 package net.yorksolutions.pengmongthaoblogcmscapstonebe.controllers;
 
+import net.yorksolutions.pengmongthaoblogcmscapstonebe.entities.Blog;
 import net.yorksolutions.pengmongthaoblogcmscapstonebe.entities.Comment;
 import net.yorksolutions.pengmongthaoblogcmscapstonebe.services.CommentService;
 import org.springframework.web.bind.annotation.*;
@@ -15,18 +16,18 @@ public class CommentController {
         this.service = service;
     }
 
-//    @PostMapping
-//    public Comment addComment(@RequestBody Comment request){
-//        return this.service.addComment(request);
-//    }
+    @PostMapping("/{blogId}")
+    public Iterable<Blog> addComment(@RequestBody Comment request, @PathVariable Long blogId){
+        return this.service.addComment(request, blogId);
+    }
 
     @PutMapping
-    public Comment updateComment(@RequestBody Comment request){
+    public Iterable<Blog> updateComment(@RequestBody Comment request){
         return this.service.updateComment(request);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteCommentById(@PathVariable Long id){
-        this.service.deleteCommentById(id);
+    @DeleteMapping("/{blogId}/{commentId}")
+    public Iterable<Blog> deleteCommentById(@PathVariable Long blogId, @PathVariable Long commentId){
+        return this.service.deleteCommentById(blogId,commentId);
     }
 }

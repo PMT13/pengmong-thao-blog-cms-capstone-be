@@ -20,9 +20,14 @@ public class AccountController {
         return this.service.getAllAccounts();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public Account getAccountById(@PathVariable Long id){
         return this.service.getAccountById(id);
+    }
+
+    @GetMapping("/username/{username}")
+    public Account getAccountByUsername(@PathVariable String username){
+        return this.service.getAccountByUsername(username);
     }
 
     @PostMapping

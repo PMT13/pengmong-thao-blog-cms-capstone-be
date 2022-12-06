@@ -31,12 +31,12 @@ public class BlogController {
     }
 
     @PutMapping
-    public Blog updateBlog(@RequestBody Blog request){
+    public Iterable<Blog> updateBlog(@RequestBody Blog request){
         return this.service.updateBlog(request);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBlogById(@PathVariable Long id){
-        this.service.deleteBlogById(id);
+    public Iterable<Blog> deleteBlogById(@PathVariable Long id){
+        return this.service.deleteBlogById(id);
     }
 }

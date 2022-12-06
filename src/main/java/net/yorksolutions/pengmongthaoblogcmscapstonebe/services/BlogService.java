@@ -22,16 +22,17 @@ public class BlogService {
     }
 
     public Blog createBlog(Blog request) {
-        this.repo.save(request);
-        return request;
-    }
-
-    public Blog updateBlog(Blog request) {
         return this.repo.save(request);
     }
 
-    public void deleteBlogById(Long id) {
+    public Iterable<Blog> updateBlog(Blog request) {
+        this.repo.save(request);
+        return this.repo.findAll();
+    }
+
+    public Iterable<Blog> deleteBlogById(Long id) {
         Blog blogToDelete = this.repo.findById(id).orElseThrow();
         this.repo.delete(blogToDelete);
+        return this.repo.findAll();
     }
 }
