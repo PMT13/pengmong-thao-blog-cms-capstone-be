@@ -17,9 +17,6 @@ public class Comment {
     private String dateUpdated;
     private String body;
 
-    @ElementCollection
-    private Set<String> likes;
-
     public Comment() {
     }
 
@@ -28,7 +25,6 @@ public class Comment {
         this.dateCreated = dateCreated;
         this.dateUpdated = "";
         this.body = body;
-        this.likes = new HashSet<>();
     }
 
     public Long getId() {
@@ -69,13 +65,5 @@ public class Comment {
 
     public void setBody(String body) {
         this.body = body;
-    }
-
-    public Set<String> getLikes() {
-        return likes;
-    }
-
-    public void setLikes(Set<String> likes) {
-        this.likes = likes;
     }
 }
