@@ -18,6 +18,11 @@ public class Blog {
     @Column(columnDefinition="TEXT")
     private String body;
     private Long creatorId;
+    private String backgroundColor;
+    private String fontColor;
+    private String fontStyle;
+    private Long fontSize;
+    private String imageURL;
     @ElementCollection
     private Set<String> views;
 
@@ -27,14 +32,19 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(String title, String dateCreated, String body, Long creatorId) {
+    public Blog(String title, String dateCreated, String body, Long creatorId, String backgroundColor, String fontColor, String imageURL, String fontStyle, Long fontSize) {
         this.title = title;
         this.dateCreated = dateCreated;
         this.dateUpdated = "";
         this.body = body;
         this.creatorId = creatorId;
+        this.backgroundColor = backgroundColor;
         this.views = new HashSet<>();
         this.comments = new HashSet<>();
+        this.fontColor = fontColor;
+        this.fontStyle = fontStyle;
+        this.imageURL = imageURL;
+        this.fontSize = fontSize;
     }
 
     public Long getId() {
@@ -99,5 +109,45 @@ public class Blog {
 
     public void setCreatorId(Long creatorId) {
         this.creatorId = creatorId;
+    }
+
+    public String getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setBackgroundColor(String backgroundColor) {
+        this.backgroundColor = backgroundColor;
+    }
+
+    public String getFontColor() {
+        return fontColor;
+    }
+
+    public void setFontColor(String fontColor) {
+        this.fontColor = fontColor;
+    }
+
+    public String getFontStyle() {
+        return fontStyle;
+    }
+
+    public void setFontStyle(String fontStyle) {
+        this.fontStyle = fontStyle;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public Long getFontSize() {
+        return fontSize;
+    }
+
+    public void setFontSize(Long fontSize) {
+        this.fontSize = fontSize;
     }
 }
