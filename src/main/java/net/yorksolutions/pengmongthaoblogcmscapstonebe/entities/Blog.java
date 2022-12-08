@@ -15,6 +15,7 @@ public class Blog {
     private String title;
     private String dateCreated;
     private String dateUpdated;
+    @Column(columnDefinition="TEXT")
     private String body;
     private Long creatorId;
     @ElementCollection
