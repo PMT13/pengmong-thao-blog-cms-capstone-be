@@ -14,13 +14,15 @@ public class Account {
 
     private String username;
     private String password;
-
+    @Column(columnDefinition="text")
+    private String profilePic;
     public Account() {
     }
 
-    public Account(String username, String password) {
+    public Account(String username, String password, String profilePic) {
         this.username = username;
         this.password = password;
+        this.profilePic = profilePic;
     }
 
     public Long getId() {
@@ -45,5 +47,13 @@ public class Account {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
     }
 }
