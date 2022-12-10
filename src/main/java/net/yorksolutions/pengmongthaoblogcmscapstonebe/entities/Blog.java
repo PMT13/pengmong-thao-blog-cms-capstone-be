@@ -22,6 +22,7 @@ public class Blog {
     private String fontColor;
     private String fontStyle;
     private Long fontSize;
+    @Column(columnDefinition="TEXT")
     private String imageURL;
     @ElementCollection
     private Set<String> views;
